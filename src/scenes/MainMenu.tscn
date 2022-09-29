@@ -114,26 +114,56 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StartButton" type="Button" parent="NinePatchRect"]
+[node name="StartButtonFacil" type="Button" parent="NinePatchRect"]
 margin_left = 536.0
-margin_top = 360.0
+margin_top = 280.0
 margin_right = 744.0
-margin_bottom = 445.0
+margin_bottom = 365.0
 custom_fonts/font = SubResource( 4 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "Start"
+text = "Fácil"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StartButtonMedio" type="Button" parent="NinePatchRect"]
+margin_left = 536.0
+margin_top = 370.0
+margin_right = 744.0
+margin_bottom = 455.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Médio"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StartButtonDificil" type="Button" parent="NinePatchRect"]
+margin_left = 536.0
+margin_top = 460.0
+margin_right = 744.0
+margin_bottom = 545.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Difícil"
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sair" type="Button" parent="NinePatchRect"]
 margin_left = 536.0
-margin_top = 470.0
+margin_top = 550.0
 margin_right = 744.0
-margin_bottom = 555.0
+margin_bottom = 635.0
 custom_fonts/font = SubResource( 4 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
