@@ -10,9 +10,13 @@ config_version=4
 
 [application]
 
-config/name="teste"
+config/name="JogoEducativo"
 run/main_scene="res://src/scenes/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SoundController="*res://src/scenes/autoloads/SoundController.tscn"
 
 [display]
 

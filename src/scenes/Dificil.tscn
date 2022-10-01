@@ -1,18 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/fonts/TitanOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Buttons.gd" type="Script" id=2]
 [ext_resource path="res://src/sounds/clickselect2-92097.mp3" type="AudioStream" id=3]
 [ext_resource path="res://src/sounds/game-start-6104.mp3" type="AudioStream" id=4]
-[ext_resource path="res://src/icons/sound-on.png" type="Texture" id=6]
-[ext_resource path="res://src/icons/speaker.png" type="Texture" id=7]
+[ext_resource path="res://src/icons/sound-on.png" type="Texture" id=5]
+[ext_resource path="res://src/icons/speaker.png" type="Texture" id=6]
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.509804, 1 )
 colors = PoolColorArray( 0.100594, 0.858398, 0.170158, 1, 0.429688, 1, 0.615707, 1, 0.284676, 0.924805, 0.234814, 1 )
 
 [sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 8 )
+gradient = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 74
@@ -60,12 +60,48 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="DynamicFont" id=8]
+size = 45
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.301961, 0.776471, 0.0705882, 1 )
+border_width_left = 3
+border_width_top = 1
+border_width_right = 3
+border_width_bottom = 4
+border_color = Color( 0.243137, 0.631373, 0.0509804, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.196078, 0.494118, 0.0470588, 1 )
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.129412, 0.32549, 0.0352941, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.243137, 0.631373, 0.0509804, 1 )
+border_width_left = 3
+border_width_top = 1
+border_width_right = 3
+border_width_bottom = 4
+border_color = Color( 0.160784, 0.4, 0.0392157, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Dificil" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_right = 1.0
@@ -75,7 +111,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Título" type="RichTextLabel" parent="NinePatchRect"]
+[node name="Dificuldade" type="RichTextLabel" parent="NinePatchRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -88,8 +124,8 @@ size_flags_vertical = 0
 custom_colors/default_color = Color( 0.0117647, 0.278431, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center]Tabuada Game[/center]"
-text = "Tabuada Game"
+bbcode_text = "[center]Difícil[/center]"
+text = "Difícil"
 fit_content_height = true
 scroll_active = false
 __meta__ = {
@@ -107,46 +143,6 @@ custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 text = "Fácil"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sound" type="Button" parent="NinePatchRect"]
-margin_left = 1192.0
-margin_top = 16.0
-margin_right = 1262.0
-margin_bottom = 86.0
-focus_mode = 0
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-enabled_focus_mode = 0
-icon = ExtResource( 7 )
-icon_align = 1
-expand_icon = true
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Music" type="Button" parent="NinePatchRect"]
-margin_left = 1104.0
-margin_top = 16.0
-margin_right = 1174.0
-margin_bottom = 86.0
-focus_mode = 0
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-enabled_focus_mode = 0
-icon = ExtResource( 6 )
-icon_align = 1
-expand_icon = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -200,6 +196,46 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Sound" type="Button" parent="NinePatchRect"]
+margin_left = 1192.0
+margin_top = 16.0
+margin_right = 1262.0
+margin_bottom = 86.0
+focus_mode = 0
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+enabled_focus_mode = 0
+icon = ExtResource( 6 )
+icon_align = 1
+expand_icon = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Music" type="Button" parent="NinePatchRect"]
+margin_left = 1104.0
+margin_top = 16.0
+margin_right = 1174.0
+margin_bottom = 86.0
+focus_mode = 0
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+icon_align = 1
+expand_icon = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="MouseHoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 
@@ -207,14 +243,11 @@ stream = ExtResource( 3 )
 stream = ExtResource( 4 )
 
 [connection signal="mouse_entered" from="NinePatchRect/StartButtonFacil" to="NinePatchRect/StartButtonFacil" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/StartButtonFacil" to="NinePatchRect/StartButtonFacil" method="_on_StartButtonFacil_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/StartButtonMedio" to="NinePatchRect/StartButtonMedio" method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="NinePatchRect/StartButtonDificil" to="NinePatchRect/StartButtonDificil" method="_on_Button_mouse_entered"]
+[connection signal="mouse_entered" from="NinePatchRect/Sair" to="NinePatchRect/Sair" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/Sair" to="NinePatchRect/Sair" method="_on_Sair_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/Sound" to="NinePatchRect/Sound" method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/Sound" to="NinePatchRect/Sound" method="_on_Sound_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/Music" to="NinePatchRect/Music" method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/Music" to="NinePatchRect/Music" method="_on_Music_pressed"]
-[connection signal="mouse_entered" from="NinePatchRect/StartButtonMedio" to="NinePatchRect/StartButtonMedio" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/StartButtonMedio" to="NinePatchRect/StartButtonMedio" method="_on_StartButtonMedio_pressed"]
-[connection signal="mouse_entered" from="NinePatchRect/StartButtonDificil" to="NinePatchRect/StartButtonDificil" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/StartButtonDificil" to="NinePatchRect/StartButtonDificil" method="_on_StartButtonDificil_pressed"]
-[connection signal="mouse_entered" from="NinePatchRect/Sair" to="NinePatchRect/Sair" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/Sair" to="NinePatchRect/Sair" method="_on_Sair_pressed"]

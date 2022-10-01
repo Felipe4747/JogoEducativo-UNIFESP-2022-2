@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/game-start-6104.mp3-f7ba2cc86e0a3edc4ecd51757271aaa9.mp3str"
+
+[deps]
+
+source_file="res://src/sounds/game-start-6104.mp3"
+dest_files=[ "res://.import/game-start-6104.mp3-f7ba2cc86e0a3edc4ecd51757271aaa9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
