@@ -1,9 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/fonts/TitanOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Buttons.gd" type="Script" id=2]
-[ext_resource path="res://src/sounds/clickselect2-92097.mp3" type="AudioStream" id=3]
-[ext_resource path="res://src/sounds/game-start-6104.mp3" type="AudioStream" id=4]
 [ext_resource path="res://src/icons/sound-on.png" type="Texture" id=5]
 [ext_resource path="res://src/icons/speaker.png" type="Texture" id=6]
 
@@ -235,12 +233,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="MouseHoverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-
-[node name="SelectSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
 
 [connection signal="mouse_entered" from="NinePatchRect/StartButtonFacil" to="NinePatchRect/StartButtonFacil" method="_on_Button_mouse_entered"]
 [connection signal="mouse_entered" from="NinePatchRect/StartButtonMedio" to="NinePatchRect/StartButtonMedio" method="_on_Button_mouse_entered"]

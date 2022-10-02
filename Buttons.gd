@@ -17,7 +17,8 @@ func _ready():
 
 
 func _on_Button_mouse_entered():
-	$"../../MouseHoverSound".play()
+	SoundController.play_MouseHoverSound()
+	#$"../../MouseHoverSound".play()
 	pass # Replace with function body.
 
 func _on_Sair_pressed():
@@ -53,12 +54,17 @@ func _on_Music_pressed():
 
 func Sound_Manager():
 	if SoundController.sound:
-		$"../../MouseHoverSound".stream_paused = false
 		$"../Sound".icon = ResourceLoader.load("res://src/icons/speaker.png")
 	else:
-		$"../../MouseHoverSound".stream_paused = true
 		$"../Sound".icon = ResourceLoader.load("res://src/icons/speaker-off.png")
 	if SoundController.music:
+		SoundController.play_music()
 		$"../Music".icon = ResourceLoader.load("res://src/icons/sound-on.png")
 	else:
+		SoundController.stop_music()
 		$"../Music".icon = ResourceLoader.load("res://src/icons/sound-off.png")
+
+
+func _on_Voltar_pressed():
+	get_tree().change_scene("res://src/scenes/MainMenu.tscn")
+	pass # Replace with function body.

@@ -2,8 +2,7 @@
 
 [ext_resource path="res://src/fonts/TitanOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Buttons.gd" type="Script" id=2]
-[ext_resource path="res://src/sounds/clickselect2-92097.mp3" type="AudioStream" id=3]
-[ext_resource path="res://src/sounds/game-start-6104.mp3" type="AudioStream" id=4]
+[ext_resource path="res://src/scenes/Facil.gd" type="Script" id=3]
 [ext_resource path="res://src/icons/sound-on.png" type="Texture" id=5]
 [ext_resource path="res://src/icons/speaker.png" type="Texture" id=6]
 
@@ -15,14 +14,20 @@ colors = PoolColorArray( 0.100594, 0.858398, 0.170158, 1, 0.429688, 1, 0.615707,
 gradient = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 74
+size = 92
 outline_size = 8
 outline_color = Color( 0.603922, 0.65098, 0.054902, 1 )
 use_filter = true
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=12]
+size = 50
+outline_size = 2
+outline_color = Color( 0.0588235, 0.737255, 0, 1 )
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=4]
-size = 45
+size = 35
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -102,6 +107,10 @@ corner_radius_bottom_left = 15
 [node name="Facil" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_right = 1.0
@@ -111,90 +120,59 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+[node name="Conta" type="RichTextLabel" parent="NinePatchRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -232.0
-margin_top = -296.0
-margin_right = 236.0
-margin_bottom = -124.0
+margin_left = -274.0
+margin_top = -217.5
+margin_right = 274.0
+margin_bottom = -109.5
 size_flags_vertical = 0
 custom_colors/default_color = Color( 0.0117647, 0.278431, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center]Fácil[/center]"
-text = "Fácil"
+bbcode_text = "[center]10 x 10 = ?[/center]"
+text = "10 x 10 = ?"
 fit_content_height = true
 scroll_active = false
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StartButtonFacil" type="Button" parent="NinePatchRect"]
-margin_left = 536.0
-margin_top = 280.0
-margin_right = 744.0
-margin_bottom = 365.0
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-text = "Fácil"
-script = ExtResource( 2 )
+[node name="Pontuacao" type="RichTextLabel" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -616.0
+margin_top = -336.0
+margin_right = -96.0
+margin_bottom = -277.0
+size_flags_vertical = 0
+custom_colors/default_color = Color( 0.0117647, 0.278431, 0, 1 )
+custom_fonts/normal_font = SubResource( 12 )
+text = "Pontuação: 0"
+fit_content_height = true
+scroll_active = false
 __meta__ = {
-"_edit_lock_": true
+"_edit_lock_": true,
+"_editor_description_": ""
 }
 
-[node name="StartButtonMedio" type="Button" parent="NinePatchRect"]
-margin_left = 536.0
-margin_top = 370.0
-margin_right = 744.0
-margin_bottom = 455.0
+[node name="Voltar" type="Button" parent="NinePatchRect"]
+margin_left = 8.0
+margin_top = 640.0
+margin_right = 144.0
+margin_bottom = 709.0
 custom_fonts/font = SubResource( 4 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "Médio"
+text = "Voltar"
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="StartButtonDificil" type="Button" parent="NinePatchRect"]
-margin_left = 536.0
-margin_top = 460.0
-margin_right = 744.0
-margin_bottom = 545.0
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-text = "Difícil"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sair" type="Button" parent="NinePatchRect"]
-margin_left = 536.0
-margin_top = 550.0
-margin_right = 744.0
-margin_bottom = 635.0
-custom_fonts/font = SubResource( 4 )
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-text = "Sair"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Sound" type="Button" parent="NinePatchRect"]
 margin_left = 1192.0
@@ -236,17 +214,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MouseHoverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-
-[node name="SelectSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-
-[connection signal="mouse_entered" from="NinePatchRect/StartButtonFacil" to="NinePatchRect/StartButtonFacil" method="_on_Button_mouse_entered"]
-[connection signal="mouse_entered" from="NinePatchRect/StartButtonMedio" to="NinePatchRect/StartButtonMedio" method="_on_Button_mouse_entered"]
-[connection signal="mouse_entered" from="NinePatchRect/StartButtonDificil" to="NinePatchRect/StartButtonDificil" method="_on_Button_mouse_entered"]
-[connection signal="mouse_entered" from="NinePatchRect/Sair" to="NinePatchRect/Sair" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/Sair" to="NinePatchRect/Sair" method="_on_Sair_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/Voltar" to="NinePatchRect/Voltar" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/Voltar" to="NinePatchRect/Voltar" method="_on_Voltar_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/Sound" to="NinePatchRect/Sound" method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/Sound" to="NinePatchRect/Sound" method="_on_Sound_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/Music" to="NinePatchRect/Music" method="_on_Button_mouse_entered"]

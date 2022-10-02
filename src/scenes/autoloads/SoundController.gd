@@ -14,5 +14,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Soundtrack.stream_paused = !music
 	pass
+
+func play_music():
+	$Soundtrack.stream_paused = false
+	
+func stop_music():
+	$Soundtrack.stream_paused = true
+
+func play_MouseHoverSound():
+	if sound:
+		$MouseHoverSound.play()
+	
