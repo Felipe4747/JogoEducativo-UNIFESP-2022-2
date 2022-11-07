@@ -1,20 +1,12 @@
 extends Button
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	#Sound_Manager()
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
 
 func _on_Button_mouse_entered():
 	SoundController.play_MouseHoverSound()
@@ -25,20 +17,6 @@ func _on_Sair_pressed():
 	get_tree().quit()
 	pass # Replace with function body.
 
-
-func _on_StartButtonFacil_pressed():
-	get_tree().change_scene("res://src/scenes/Facil.tscn")
-	pass # Replace with function body.
-
-
-func _on_StartButtonMedio_pressed():
-	get_tree().change_scene("res://src/scenes/Medio.tscn")
-	pass # Replace with function body.
-
-
-func _on_StartButtonDificil_pressed():
-	get_tree().change_scene("res://src/scenes/Dificil.tscn")
-	pass # Replace with function body.
 
 
 func _on_Sound_pressed():
@@ -67,4 +45,10 @@ func Sound_Manager():
 
 func _on_Voltar_pressed():
 	get_tree().change_scene("res://src/scenes/MainMenu.tscn")
+	pass # Replace with function body.
+
+
+func _on_StartButton_pressed(difficulty):
+	Global.difficulty = difficulty
+	get_tree().change_scene("res://src/scenes/Game.tscn")
 	pass # Replace with function body.

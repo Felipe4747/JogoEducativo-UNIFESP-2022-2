@@ -26,3 +26,10 @@ func play_MouseHoverSound():
 	if sound:
 		$MouseHoverSound.play()
 	
+func playRight():
+	if sound:
+		$Answer/Right.play()
+
+func playWrong():
+	if sound:
+		$Answer/Wrong.play()

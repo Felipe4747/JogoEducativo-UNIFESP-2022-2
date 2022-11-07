@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://src/fonts/TitanOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Buttons.gd" type="Script" id=2]
-[ext_resource path="res://src/scenes/Facil.gd" type="Script" id=3]
-[ext_resource path="res://src/icons/sound-on.png" type="Texture" id=5]
-[ext_resource path="res://src/icons/speaker.png" type="Texture" id=6]
+[ext_resource path="res://src/fonts/TitanOne-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://src/icons/sound-on.png" type="Texture" id=4]
+[ext_resource path="res://src/icons/speaker.png" type="Texture" id=5]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.509804, 1 )
@@ -18,26 +18,26 @@ size = 92
 outline_size = 8
 outline_color = Color( 0.298039, 0.658824, 0.117647, 1 )
 use_filter = true
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 50
 outline_color = Color( 0.0588235, 0.737255, 0, 1 )
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 28
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 66
-outline_size = 17
+outline_size = 14
 outline_color = Color( 0.0117647, 0.278431, 0, 1 )
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.301961, 0.776471, 0.0705882, 1 )
@@ -76,7 +76,7 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="DynamicFont" id=8]
 size = 45
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.301961, 0.776471, 0.0705882, 1 )
@@ -115,12 +115,12 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="DynamicFont" id=4]
 size = 45
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
-[node name="Facil" type="Control"]
+[node name="Game" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_vertical_guides_": [ 640.0 ]
@@ -195,6 +195,26 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Tempo" type="RichTextLabel" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -616.0
+margin_top = -248.0
+margin_right = -408.0
+margin_bottom = -208.0
+size_flags_vertical = 0
+custom_colors/default_color = Color( 0.0117647, 0.278431, 0, 1 )
+custom_fonts/normal_font = SubResource( 14 )
+text = "Tempo:"
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
 [node name="Rodada" type="RichTextLabel" parent="NinePatchRect"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -242,7 +262,7 @@ custom_styles/pressed = SubResource( 10 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 enabled_focus_mode = 0
-icon = ExtResource( 6 )
+icon = ExtResource( 5 )
 icon_align = 1
 expand_icon = true
 script = ExtResource( 2 )
@@ -262,7 +282,7 @@ custom_styles/pressed = SubResource( 10 )
 custom_styles/focus = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 enabled_focus_mode = 0
-icon = ExtResource( 5 )
+icon = ExtResource( 4 )
 icon_align = 1
 expand_icon = true
 script = ExtResource( 2 )
@@ -270,13 +290,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GridContainer" type="Control" parent="NinePatchRect"]
+[node name="ResButtons" type="Control" parent="NinePatchRect"]
 margin_left = 480.0
 margin_top = 312.0
 margin_right = 800.0
 margin_bottom = 528.0
 
-[node name="Res1" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="Res1" type="Button" parent="NinePatchRect/ResButtons"]
 margin_left = 16.0
 margin_top = 8.0
 margin_right = 152.0
@@ -291,7 +311,7 @@ enabled_focus_mode = 0
 text = "Res1"
 script = ExtResource( 2 )
 
-[node name="Res2" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="Res2" type="Button" parent="NinePatchRect/ResButtons"]
 margin_left = 168.0
 margin_top = 8.0
 margin_right = 304.0
@@ -306,7 +326,7 @@ enabled_focus_mode = 0
 text = "Res2"
 script = ExtResource( 2 )
 
-[node name="Res3" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="Res3" type="Button" parent="NinePatchRect/ResButtons"]
 margin_left = 16.0
 margin_top = 112.0
 margin_right = 152.0
@@ -321,7 +341,7 @@ enabled_focus_mode = 0
 text = "Res3"
 script = ExtResource( 2 )
 
-[node name="Res4" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="Res4" type="Button" parent="NinePatchRect/ResButtons"]
 margin_left = 168.0
 margin_top = 112.0
 margin_right = 304.0
@@ -336,17 +356,26 @@ enabled_focus_mode = 0
 text = "Res4"
 script = ExtResource( 2 )
 
+[node name="ColorTimer" type="Timer" parent="NinePatchRect/ResButtons"]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="NinePatchRect"]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="mouse_entered" from="NinePatchRect/Voltar" to="NinePatchRect/Voltar" method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/Voltar" to="NinePatchRect/Voltar" method="_on_Voltar_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/Sound" to="NinePatchRect/Sound" method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/Sound" to="NinePatchRect/Sound" method="_on_Sound_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/Music" to="NinePatchRect/Music" method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/Music" to="NinePatchRect/Music" method="_on_Music_pressed"]
-[connection signal="mouse_entered" from="NinePatchRect/GridContainer/Res1" to="NinePatchRect/GridContainer/Res1" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/GridContainer/Res1" to="." method="_on_Res_pressed" binds= [ "Res1" ]]
-[connection signal="mouse_entered" from="NinePatchRect/GridContainer/Res2" to="NinePatchRect/GridContainer/Res2" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/GridContainer/Res2" to="." method="_on_Res_pressed" binds= [ "Res2" ]]
-[connection signal="mouse_entered" from="NinePatchRect/GridContainer/Res3" to="NinePatchRect/GridContainer/Res3" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/GridContainer/Res3" to="." method="_on_Res_pressed" binds= [ "Res3" ]]
-[connection signal="mouse_entered" from="NinePatchRect/GridContainer/Res4" to="NinePatchRect/GridContainer/Res4" method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/GridContainer/Res4" to="." method="_on_Res_pressed" binds= [ "Res4" ]]
+[connection signal="mouse_entered" from="NinePatchRect/ResButtons/Res1" to="NinePatchRect/ResButtons/Res1" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/ResButtons/Res1" to="." method="_on_Res_pressed" binds= [ "Res1" ]]
+[connection signal="mouse_entered" from="NinePatchRect/ResButtons/Res2" to="NinePatchRect/ResButtons/Res2" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/ResButtons/Res2" to="." method="_on_Res_pressed" binds= [ "Res2" ]]
+[connection signal="mouse_entered" from="NinePatchRect/ResButtons/Res3" to="NinePatchRect/ResButtons/Res3" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/ResButtons/Res3" to="." method="_on_Res_pressed" binds= [ "Res3" ]]
+[connection signal="mouse_entered" from="NinePatchRect/ResButtons/Res4" to="NinePatchRect/ResButtons/Res4" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/ResButtons/Res4" to="." method="_on_Res_pressed" binds= [ "Res4" ]]
+[connection signal="timeout" from="NinePatchRect/ResButtons/ColorTimer" to="." method="_on_ColorTimer_timeout"]
+[connection signal="timeout" from="NinePatchRect/Timer" to="." method="_on_Timer_timeout"]
