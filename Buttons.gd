@@ -7,7 +7,7 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Sound_Manager()
+	#Sound_Manager()
 	pass # Replace with function body.
 
 
