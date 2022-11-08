@@ -1,22 +1,25 @@
 extends Control
 
 var random = RandomNumberGenerator.new()
-var minFator
-var maxFator
+var minFator = [0,0]
+var maxFator = [0,0]
 var fator1 
 var fator2
 var right
-var pontuacao = 0
 var chances
 var rodada = 0
 
 func _ready():
+	Sound_Manager()
 	setupDifficulty()
+	Global.score = 0
 	random.randomize()
 	nextRound()
 	pass
 
 func nextRound():
+	if rodada == 10:
+		get_tree().change_scene("res://src/scenes/Score.tscn")
 	rodada+=1
 	chances = 3
 	fator1 = random.randi_range(minFator[0],maxFator[0])
@@ -25,7 +28,7 @@ func nextRound():
 	$NinePatchRect/Timer.start()
 	$NinePatchRect/Rodada.bbcode_text = "[center]"+str(rodada)+"[/center]"
 	$NinePatchRect/Chances.text = "Chances: "+str(chances)
-	$NinePatchRect/Pontuacao.text = "Pontuação: "+str(pontuacao)
+	$NinePatchRect/Pontuacao.text = "Pontuação: "+str(Global.score)
 	$NinePatchRect/Conta.bbcode_text = "[center]"+str(fator1)+" x "+str(fator2)+" = ?[center]"
 	var res = [right]
 	while res.size()<4:
@@ -39,7 +42,6 @@ func nextRound():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$NinePatchRect/Tempo.text = "Tempo: "+str(round($NinePatchRect/Timer.time_left))
-#	pass
 
 
 func _on_Res_pressed(button: String):
@@ -67,12 +69,9 @@ func setupDifficulty():
 			maxFator = [10,10]
 
 
-func verificaResposta():
-	pass
-
 func rightAnswer():
 	SoundController.playRight()
-	pontuacao+=10*chances*round($NinePatchRect/Timer.time_left)
+	Global.score+=10*chances*round($NinePatchRect/Timer.time_left)
 	nextRound()
 	pass
 
@@ -94,3 +93,15 @@ func _on_Timer_timeout():
 	SoundController.playWrong()
 	nextRound()
 	pass # Replace with function body.
+
+func Sound_Manager():
+	if SoundController.sound:
+		$NinePatchRect/Sound.icon = ResourceLoader.load("res://src/icons/speaker.png")
+	else:
+		$NinePatchRect/Sound.icon = ResourceLoader.load("res://src/icons/speaker-off.png")
+	if SoundController.music:
+		SoundController.play_music()
+		$NinePatchRect/Music.icon = ResourceLoader.load("res://src/icons/sound-on.png")
+	else:
+		SoundController.stop_music()
+		$NinePatchRect/Music.icon = ResourceLoader.load("res://src/icons/sound-off.png")

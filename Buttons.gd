@@ -1,7 +1,6 @@
 extends Button
 
 func _ready():
-	#Sound_Manager()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -10,7 +9,6 @@ func _ready():
 
 func _on_Button_mouse_entered():
 	SoundController.play_MouseHoverSound()
-	#$"../../MouseHoverSound".play()
 	pass # Replace with function body.
 
 func _on_Sair_pressed():
@@ -45,10 +43,8 @@ func Sound_Manager():
 
 func _on_Voltar_pressed():
 	get_tree().change_scene("res://src/scenes/MainMenu.tscn")
-	pass # Replace with function body.
-
 
 func _on_StartButton_pressed(difficulty):
 	Global.difficulty = difficulty
 	get_tree().change_scene("res://src/scenes/Game.tscn")
-	pass # Replace with function body.
+

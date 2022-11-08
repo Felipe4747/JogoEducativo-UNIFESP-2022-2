@@ -22,6 +22,8 @@ volume_db = -15.0
 
 [node name="Right" type="AudioStreamPlayer" parent="Answer"]
 stream = ExtResource( 3 )
+volume_db = -12.0
 
 [node name="Wrong" type="AudioStreamPlayer" parent="Answer"]
 stream = ExtResource( 5 )
+volume_db = -12.0
