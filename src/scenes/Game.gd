@@ -20,7 +20,8 @@ func _ready():
 
 func nextRound():
 	if rodada == 10:
-		get_tree().change_scene("res://src/scenes/Score.tscn")
+		TransitionScreen.change_scene("res://src/scenes/Score.tscn")
+		return
 	rodada+=1
 	chances = 3
 	fator1 = random.randi_range(minFator[0],maxFator[0])

@@ -42,9 +42,9 @@ func Sound_Manager():
 
 
 func _on_Voltar_pressed():
-	get_tree().change_scene("res://src/scenes/MainMenu.tscn")
+	TransitionScreen.change_scene("res://src/scenes/MainMenu.tscn")
 
 func _on_StartButton_pressed(difficulty):
 	Global.difficulty = difficulty
-	get_tree().change_scene("res://src/scenes/Game.tscn")
+	TransitionScreen.change_scene("res://src/scenes/Game.tscn")
 

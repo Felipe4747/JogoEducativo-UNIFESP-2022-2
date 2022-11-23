@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 SoundController="*res://src/scenes/autoloads/SoundController.tscn"
 Global="*res://global.gd"
+TransitionScreen="*res://src/scenes/autoloads/TransitionScreen.tscn"
 
 [display]
 
