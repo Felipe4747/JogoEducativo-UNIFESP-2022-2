@@ -18,3 +18,7 @@ func Sound_Manager():
 
 #func _process(delta):
 #	pass
+
+
+func _on_Creditos_pressed():
+	TransitionScreen.change_scene("res://src/scenes/Creditos.tscn")
