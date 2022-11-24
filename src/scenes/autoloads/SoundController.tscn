@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/sounds/soundtrack.mp3" type="AudioStream" id=1]
 [ext_resource path="res://src/sounds/clickselect2-92097.mp3" type="AudioStream" id=2]
 [ext_resource path="res://src/sounds/correct.mp3" type="AudioStream" id=3]
 [ext_resource path="res://src/scenes/autoloads/SoundController.gd" type="Script" id=4]
 [ext_resource path="res://src/sounds/wrong.mp3" type="AudioStream" id=5]
+[ext_resource path="res://src/sounds/timer.mp3" type="AudioStream" id=6]
 
 [node name="SoundController" type="Node"]
 script = ExtResource( 4 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
 
 [node name="MouseHoverSound" type="AudioStreamPlayer" parent="."]
@@ -27,3 +28,7 @@ volume_db = -15.0
 [node name="Wrong" type="AudioStreamPlayer" parent="Answer"]
 stream = ExtResource( 5 )
 volume_db = -15.0
+
+[node name="Timer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 8.74

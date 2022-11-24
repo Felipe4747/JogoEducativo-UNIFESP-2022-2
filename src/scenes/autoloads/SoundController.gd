@@ -7,10 +7,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
-func _process(delta):
-	pass
-
 func play_music():
 	$Soundtrack.stream_paused = false
 	
@@ -28,3 +24,13 @@ func playRight():
 func playWrong():
 	if sound:
 		$Answer/Wrong.play()
+
+func play_timer():
+	if sound:
+		$Timer.play()
+		
+func stop_timer():
+	$Timer.stop()
+	
+func timer_is_playing():
+	return $Timer.playing

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/timer.mp3-ad10ac0a3af015d15844589249d98922.mp3str"
+
+[deps]
+
+source_file="res://src/sounds/timer.mp3"
+dest_files=[ "res://.import/timer.mp3-ad10ac0a3af015d15844589249d98922.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

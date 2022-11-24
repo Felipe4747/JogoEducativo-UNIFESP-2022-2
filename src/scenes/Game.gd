@@ -27,6 +27,7 @@ func nextRound():
 	fator1 = random.randi_range(minFator[0],maxFator[0])
 	fator2 = random.randi_range(minFator[1],maxFator[1])
 	right = fator1*fator2
+	SoundController.stop_timer()
 	$NinePatchRect/Timer.start()
 	$NinePatchRect/Rodada.bbcode_text = "[center]"+str(rodada)+"[/center]"
 	$NinePatchRect/Chances.text = "Chances: "+str(chances)
@@ -42,8 +43,14 @@ func nextRound():
 		get_node("NinePatchRect/ResButtons/Res"+str(i+1)).text = str(res[i])
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$NinePatchRect/Tempo.text = "Tempo: "+str(round($NinePatchRect/Timer.time_left))
+	if $NinePatchRect/Timer.time_left < 6:
+		$NinePatchRect/Tempo/Warning.visible = 1
+		if !SoundController.timer_is_playing():
+			SoundController.play_timer()
+	else:
+		$NinePatchRect/Tempo/Warning.visible = 0
 
 func _on_Res_pressed(button: String):
 	#button = Res1, Res2...

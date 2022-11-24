@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Buttons.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/icons/sound-on.png" type="Texture" id=4]
 [ext_resource path="res://src/icons/speaker.png" type="Texture" id=5]
 [ext_resource path="res://src/img/background2.png" type="Texture" id=6]
+[ext_resource path="res://src/icons/warning.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=3]
 size = 120
@@ -167,7 +168,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -616.0
 margin_top = -248.0
-margin_right = -408.0
+margin_right = -288.0
 margin_bottom = -208.0
 size_flags_vertical = 0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
@@ -179,6 +180,14 @@ __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": ""
 }
+
+[node name="Warning" type="NinePatchRect" parent="NinePatchRect/Tempo"]
+margin_left = 135.0
+margin_top = 2.0
+margin_right = 168.0
+margin_bottom = 35.0
+mouse_filter = 0
+texture = ExtResource( 7 )
 
 [node name="Dificuldade" type="RichTextLabel" parent="NinePatchRect"]
 modulate = Color( 1, 1, 1, 0.894118 )
