@@ -188,6 +188,9 @@ margin_right = 168.0
 margin_bottom = 35.0
 mouse_filter = 0
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Dificuldade" type="RichTextLabel" parent="NinePatchRect"]
 modulate = Color( 1, 1, 1, 0.894118 )
