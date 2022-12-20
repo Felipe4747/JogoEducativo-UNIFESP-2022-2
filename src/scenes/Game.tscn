@@ -378,6 +378,12 @@ one_shot = true
 wait_time = 10.0
 one_shot = true
 
+[node name="TimerBar" type="ColorRect" parent="NinePatchRect/Timer"]
+anchor_right = 1.0
+anchor_bottom = 0.014
+margin_bottom = -0.0799999
+color = Color( 1, 0.211765, 0, 0.945098 )
+
 [node name="NextRoundTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true

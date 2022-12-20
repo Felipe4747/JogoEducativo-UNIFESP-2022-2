@@ -44,6 +44,7 @@ func nextRound():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	timeBarHandler()
 	$NinePatchRect/Tempo.text = "Tempo: "+str(round($NinePatchRect/Timer.time_left))
 	if $NinePatchRect/Timer.time_left < 6:
 		$NinePatchRect/Tempo/Warning.visible = 1
@@ -71,15 +72,14 @@ func setupDifficulty():
 			maxFator = [5,5]
 		2:
 			$NinePatchRect/Dificuldade.text = "Médio"
-			$NinePatchRect/Timer.wait_time = 15
+			$NinePatchRect/Timer.wait_time = 12
 			minFator = [1,5]
 			maxFator = [5,10]
 		3:
 			$NinePatchRect/Dificuldade.text = "Difícil"
-			$NinePatchRect/Timer.wait_time = 20
+			$NinePatchRect/Timer.wait_time = 14
 			minFator = [5,5]
 			maxFator = [10,10]
-
 
 func rightAnswer(button: String):
 	streak+=1
@@ -126,5 +126,10 @@ func Sound_Manager():
 		SoundController.stop_music()
 		$NinePatchRect/Music.icon = ResourceLoader.load("res://src/icons/sound-off.png")
 
-
-
+func timeBarHandler():
+	$NinePatchRect/Timer/TimerBar.margin_left = ($NinePatchRect/Timer.wait_time-$NinePatchRect/Timer.time_left)/$NinePatchRect/Timer.wait_time*(1280/2)
+	$NinePatchRect/Timer/TimerBar.margin_right = -($NinePatchRect/Timer.wait_time-$NinePatchRect/Timer.time_left)/$NinePatchRect/Timer.wait_time*(1280/2)
+	if $NinePatchRect/Timer.time_left < 5:
+		$NinePatchRect/Timer/TimerBar.color = "f1ff3600"
+	else: 
+		$NinePatchRect/Timer/TimerBar.color = "f1ebff00"
